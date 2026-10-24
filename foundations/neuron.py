@@ -15,10 +15,11 @@ class Solution:
         # return round(your_answer, 5)
         z = (w @ x) + b
         if activation == "sigmoid":
-            if z >= 0:
-                sigma = 1 / (1 + np.exp(-z))
-            else:
-                sigma = np.exp(z) / (np.exp(z) + 1)
+            sigma = 1 / (1 + np.exp(-z))
+            # if z >= 0:
+            #     sigma = 1 / (1 + np.exp(-z))
+            # else:
+            #     sigma = np.exp(z) / (np.exp(z) + 1)
         else:
             sigma = max(0.0, z)
         
