@@ -21,19 +21,19 @@ class Solution:
         loss_history = []
 
         for epoch in range(epochs):
-            print("w.shape: ", w.shape)
-            print("X.shape: ", X.shape)
+            # print("w.shape: ", w.shape)
+            # print("X.shape: ", X.shape)
             y_hat = w @ X.T + b # (n,)
-            print("y_hat.shape: ", y_hat.shape)
+            # print("y_hat.shape: ", y_hat.shape)
 
             mse = np.mean((y_hat - y)**2)
             loss_history.append(mse)
 
             error = (y_hat - y) # (n,)
-            print("error.shape: ", error.shape)
+            # print("error.shape: ", error.shape)
 
             dl_dw = (2.0/n)*(error@X) # (d,)
-            print("dl_dw.shape: ", dl_dw.shape)
+            # print("dl_dw.shape: ", dl_dw.shape)
             dl_db = (2.0/n)*(error.sum()) # ()
 
             w = w - lr*dl_dw
